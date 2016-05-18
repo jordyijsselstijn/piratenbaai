@@ -1,0 +1,14 @@
+{
+  "name": "piratebay_dev",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Jordy IJsselstijn <jordyijsselstijn@me.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "^2.2.3"
+  }
+}
