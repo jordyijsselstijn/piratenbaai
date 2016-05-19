@@ -2,11 +2,22 @@ var express = require('express');
 var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var exec = require('exec');
 
+
+    exec('gulp', function(err, out, code){
+
+        if (err instanceof Error)
+            throw err;
+        process.stderr.write(err);
+        process.stdout.write(out);
+
+
+    });
     //use the express public folder as static location
     app.use(express.static(__dirname + '/public'));
     //use the bower components folder as static location
-    app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+    app.use('/dist',  express.static(__dirname + '/dist'));
     //use the app's public folder as static location.
     app.use('/public',  express.static(__dirname + '/public'));
     //use the root domain as static location
@@ -46,8 +57,9 @@ var io = require('socket.io')(http);
 
     //listen on port 3000
     http.listen(3000, function(){
-      console.log('listening on localhost:3000');
+        console.log('listening on localhost:3000');
     });
+
 
 
     //this script should control all parts of the ship
