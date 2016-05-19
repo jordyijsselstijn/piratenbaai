@@ -14,20 +14,20 @@ var pirate = (function(window){
                 if(event.beta >= 0){
                     ammount = (event.beta / max) * 100;
                     socket.emit('backward', Math.round(ammount) );
-                    this.emit('backward', Math.round(ammount) );
+                    pirate.emit('backward', Math.round(ammount) );
                 }else{
                     ammount = (event.beta / min) * 100;
                     socket.emit('forward', Math.round(ammount) );
-                    this.emit('forward', Math.round(ammount) );
+                    pirate.emit('forward', Math.round(ammount) );
                 }
                 if(event.gamma >= 0){
                     ammount = (event.gamma / max) * 100;
                     socket.emit('right', Math.round(ammount) );
-                    this.emit('right', Math.round(ammount) );
+                    pirate.emit('right', Math.round(ammount) );
                 }else{
                     ammount = (event.gamma / min) * 100;
                     socket.emit('left', Math.round(ammount) );
-                    this.emit('left', Math.round(ammount) );
+                    pirate.emit('left', Math.round(ammount) );
                 }
             });
         },
