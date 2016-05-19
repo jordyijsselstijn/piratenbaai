@@ -6,7 +6,6 @@ var app = angular.module('app', ['ui','ui.router']);
             templateUrl : 'public/js/app/templates/intro.html'
         });
 
-
     });
     app.controller('AppController', ['$scope', function($scope){
 

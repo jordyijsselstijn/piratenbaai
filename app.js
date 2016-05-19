@@ -3,11 +3,16 @@ var app = require('express')();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+    //use the express public folder as static location
     app.use(express.static(__dirname + '/public'));
+    //use the bower components folder as static location
     app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+    //use the app's public folder as static location.
     app.use('/public',  express.static(__dirname + '/public'));
+    //use the root domain as static location
     app.use('/',  express.static(__dirname + '/'));
 
+    //When the url is / serve index.html from the public folder.
     app.get('/', function(req, res){
       res.sendFile(__dirname + '/index.html');
     });
