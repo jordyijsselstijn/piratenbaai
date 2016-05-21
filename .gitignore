@@ -2,4 +2,5 @@
 .idea
 node_modules
 bower_components
+/app/js/final.min.js
 dist
