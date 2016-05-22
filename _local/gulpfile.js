@@ -7,7 +7,9 @@ var js = [
     'bower_components/angular/angular.js',
     'bower_components/angular-ui/build/angular-ui.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
+    'bower_components/angular-audio/app/angular.audio.js',
     'bower_components/socket.io-client/socket.io.js',
+    'bower_components/angular-socket-io/socket.js',
     'source/js/**/*.js',
     'source/js/*.js'
 ];

@@ -1,9 +1,7 @@
-var app = angular.module('app', ['ui', 'ui.router']);
+var app = angular.module('app', ['ui', 'ui.router', 'ngAudio']);
 
 app.config(function ($stateProvider) {
-    
-    
-    
+
     $stateProvider.state('step-1', {
         url: '/step-1',
         templateUrl: '../app/templates/boarding/step-1.html'
@@ -23,8 +21,54 @@ app.config(function ($stateProvider) {
         url: '/chapter-1',
         templateUrl: '../app/templates/chapter/chapter-1.html'
     });
+
+    $stateProvider.state('chapter-2', {
+        url: '/chapter-2',
+        templateUrl: '../app/templates/chapter/chapter-2.html'
+    });
+
+    $stateProvider.state('chapter-3', {
+        url: '/chapter-3',
+        templateUrl: '../app/templates/chapter/chapter-3.html'
+    });
+
+    $stateProvider.state('chapter-4', {
+        url: '/chapter-4',
+        templateUrl: '../app/templates/chapter/chapter-4.html'
+    });
+
+    $stateProvider.state('chapter-5', {
+        url: '/chapter-5',
+        templateUrl: '../app/templates/chapter/chapter-5.html'
+    });
+
+    $stateProvider.state('admin', {
+        url: '/admin',
+        templateUrl: '../app/templates/admin/admin-panel.html'
+    });
 });
 
-app.controller('AppController', ['$scope', function ($scope) {
 
-}]);
+app.factory('socket', function ($rootScope) {
+    var socket = io.connect();
+    return {
+        on: function (eventName, callback) {
+            socket.on(eventName, function () {
+                var args = arguments;
+                $rootScope.$apply(function () {
+                    callback.apply(socket, args);
+                });
+            });
+        },
+        emit: function (eventName, data, callback) {
+            socket.emit(eventName, data, function () {
+                var args = arguments;
+                $rootScope.$apply(function () {
+                    if (callback) {
+                        callback.apply(socket, args);
+                    }
+                });
+            })
+        }
+    };
+});

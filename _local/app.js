@@ -27,6 +27,7 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, '../', 'index.html'));
 });
 
+//returns a specially made pirate name for the user.
 app.get('/start/pirate_name', function (req, res) {
 
     var name = req.query.name;
@@ -50,8 +51,12 @@ io.on('connection', function (socket) {
     console.log('user connected');
 });
 
-//handle all events from the gyroscope
+//handle all events from the connection
 io.on('connection', function (socket) {
+
+    /**
+     * Directional events
+     */
 
     socket.on('forward', function (event) {
         //console.log('forward by', event, '%');
@@ -67,6 +72,26 @@ io.on('connection', function (socket) {
 
     socket.on('left', function (event) {
         //console.log('left by', event, '%');
+    });
+
+    /**
+     * Admin events!
+     */
+
+    socket.on('complete_chapter', function(data){
+        console.log('Completed chapter, open new chapter.');
+        socket.broadcast.emit('complete_chapter', data);
+    });
+
+    socket.on('pirate_raid', function(data){
+
+        console.log('Pirate Raid with '+data+ ' hitpoints!');
+        socket.broadcast.emit('pirate_raid', data);
+    });
+
+    socket.on('drunk_af', function(data){
+        console.log('User is in drunken mode, controls inverted for '+data/1000+' seconds');
+        //do something to the controls.
     });
 
 });

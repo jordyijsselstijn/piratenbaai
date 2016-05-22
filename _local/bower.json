@@ -13,6 +13,8 @@
     "angular": "^1.5.5",
     "angular-ui": "^0.4.0",
     "angular-ui-router": "ui-router#^0.3.0",
-    "socket.io-client": "^1.4.6"
+    "socket.io-client": "^1.4.6",
+    "angular-socket-io": "^0.7.0",
+    "angular-audio": "^1.7.2"
   }
 }
