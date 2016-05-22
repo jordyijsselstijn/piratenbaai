@@ -1,0 +1,67 @@
+.step {
+  background: #A81432;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: url(../img/background/step_background.jpg) center/cover;
+}
+
+.step__card {
+  width: 374px;
+  opacity: 0.92;
+  background: #FFFFFF;
+  height: 540px;
+  display: block;
+  margin: -18px auto 0;
+  position: relative;
+}
+
+.step__icon {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step__description {
+  font-family: Athelas-Regular;
+  font-size: 25px;
+  color: #DA465D;
+  position: absolute;
+  top: 373px;
+  width: 100%;
+  text-align: center;
+}
+
+.step__button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.step__wizard {
+  width: 442px;
+  display: block;
+  position: absolute;
+  bottom: 122px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.step__wizard-item {
+  /* Rectangle 12: */
+  opacity: 0.31;
+  background: #FFFFFF;
+  border-radius: 100px;
+  width: 142px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 2px;
+}
+
+.step__wizard-item--active {
+  opacity: 0.92;
+}

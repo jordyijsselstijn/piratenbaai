@@ -1,0 +1,86 @@
+.chapter {
+  background: #A81432;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: url(../img/background/chapter_background.jpg) center/cover;
+}
+
+.chapter__sidebar {
+  width: 382px;
+  height: 100%;
+  background: #FAF0F1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.chapter__label {
+  font-family: LucidaGrande;
+  font-size: 14px;
+  color: #A4283D;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 55px;
+  width: 100%;
+}
+
+.chapter__title {
+  font-family: Athelas-Regular;
+  font-size: 36px;
+  color: #A4283D;
+  text-transform: uppercase;
+  position: absolute;
+  top: 80px;
+  width: 100%;
+}
+
+.chapter__controls {
+  position: absolute;
+  top: 164px;
+  width: 194px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.chapter__controls--previous {
+  margin-right: 65px;
+}
+
+.chapter__controls--play {
+  margin-right: 60px;
+}
+
+.chapter__controls--next {
+
+}
+
+.chapter__waves {
+  position: absolute;
+  top: 264px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.chapter__to {
+  font-family: LucidaGrande;
+  font-size: 14px;
+  color: #A4283D;
+  letter-spacing: 0.8px;
+  position: absolute;
+  top: 304px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.chapter__destination {
+  font-family: Athelas-Regular;
+  font-size: 36px;
+  color: #A4283D;
+  position: absolute;
+  top: 332px;
+  width: 100%;
+  text-transform: uppercase;
+}
+

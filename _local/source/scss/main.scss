@@ -1,1 +1,8 @@
-// Import partials
+// Partials
+@import 'partials/settings';
+@import 'partials/global';
+
+// Blocks
+@import 'blocks/button';
+@import 'blocks/step';
+@import 'blocks/chapter';
