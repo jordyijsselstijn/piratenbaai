@@ -1,6 +1,6 @@
 var app = angular.module('app', ['ui', 'ui.router', 'ngAudio']);
 
-app.config(function ($stateProvider) {
+app.config(['$stateProvider',  function ($stateProvider) {
 
     $stateProvider.state('start', {
         url: '/start',
@@ -56,29 +56,9 @@ app.config(function ($stateProvider) {
         url: '/admin',
         templateUrl: '../app/templates/admin/admin-panel.html'
     });
-});
 
-
-app.factory('socket', function ($rootScope) {
-    var socket = io.connect();
-    return {
-        on: function (eventName, callback) {
-            socket.on(eventName, function () {
-                var args = arguments;
-                $rootScope.$apply(function () {
-                    callback.apply(socket, args);
-                });
-            });
-        },
-        emit: function (eventName, data, callback) {
-            socket.emit(eventName, data, function () {
-                var args = arguments;
-                $rootScope.$apply(function () {
-                    if (callback) {
-                        callback.apply(socket, args);
-                    }
-                });
-            })
-        }
-    };
-});
+    $stateProvider.state('rotate', {
+        url: '/rotate',
+        templateUrl: '../app/templates/other/rotate-screen.html'
+    });
+}]);
