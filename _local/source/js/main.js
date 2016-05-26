@@ -2,6 +2,16 @@ var app = angular.module('app', ['ui', 'ui.router', 'ngAudio']);
 
 app.config(function ($stateProvider) {
 
+    $stateProvider.state('start', {
+        url: '/start',
+        templateUrl: '../app/templates/start/information.html'
+    });
+
+    $stateProvider.state('welcome', {
+        url: '/welcome',
+        templateUrl: '../app/templates/start/welcome.html'
+    });
+    
     $stateProvider.state('step-1', {
         url: '/step-1',
         templateUrl: '../app/templates/boarding/step-1.html'

@@ -7,3 +7,11 @@ html, body {
   padding: 0;
   overflow: hidden;
 }
+
+*:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
