@@ -13,6 +13,12 @@ html, body {
 a {
   text-decoration: none; }
 
+a, button, .myelements {
+  -ms-touch-action: manipulation;
+  /* IE10  */
+  touch-action: manipulation;
+  /* IE11+ */ }
+
 .button {
   background: #DA465D;
   box-shadow: 2px 3px 64px 0px rgba(0, 0, 0, 0.5);
