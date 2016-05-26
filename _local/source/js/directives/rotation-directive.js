@@ -11,6 +11,9 @@ angular.module('app')
                     if(window.innerHeight > window.innerWidth){
                         $state.go('rotate');
                     }
+                    if(window.innerHeight < window.innerWidth){
+                        window.history.back();
+                    }
                 });
             }
        }
