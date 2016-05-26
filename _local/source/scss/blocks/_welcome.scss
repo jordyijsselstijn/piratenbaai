@@ -1,0 +1,57 @@
+.welcome {
+  background: #A81432;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: url(../img/background/welcome_background.jpg) center/cover;
+}
+
+.welcome__flag {
+  width: 330px;
+  background: RGBA(105, 0, 10, 1.00);
+  position: fixed;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.welcome__label {
+  font-family: LucidaGrande;
+  font-size: 20px;
+  color: #FFFFFF;
+  letter-spacing: 1.77px;
+  position: fixed;
+  left: 50%;
+  top: 200px;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+}
+
+.welcome__name {
+  font-family: Athelas-Regular;
+  font-size: 76px;
+  color: #FFFFFF;
+  position: fixed;
+  left: 50%;
+  top: 260px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.welcome__button {
+  background: #DA465D;
+  box-shadow: 2px 3px 64px 0px rgba(0,0,0,0.50);
+  border-radius: 100px;
+  width: 460px;
+  font-family: LucidaGrande;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 65px;
+  height: 65px;
+  position: fixed;
+  left: 50%;
+  top: 400px;
+  transform: translateX(-50%);
+}
