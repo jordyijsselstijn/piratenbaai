@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('AppController', ['$scope', '$state', 'socket', 'PirateService', function ($scope, $state, socket, PirateService) {
+    .controller('AppController', ['$scope', '$state', 'socket', '$rootScope', 'PirateService', function ($scope, $state, socket, $rootScope ,PirateService) {
 
             //Stub to fill with pirate data later.
             $scope.pirate = {
@@ -9,13 +9,25 @@ angular.module('app')
 
             $scope.start = function(){
 
-                PirateService.getPirateName($scope.pirate.firstName).then(function(data){
-                    $scope.pirate.lastName = data.data.lastName;
-                });
+                if($scope.pirate.firstName != null){
+                    PirateService.getPirateName($scope.pirate.firstName).then(function(data){
+                        $scope.pirate.lastName = data.data.lastName;
+                    });
 
-                $state.go('welcome');
+                    $state.go('welcome');
+                }
 
             };
+
+            $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
+
+                //if pirate is not yet set, make sure routes to the chapter section are blocked.
+                if($scope.pirate.firstName == null && toState.name != 'start'){
+                    console.log("Pirate's first name is not yet set. Navigation blocked!");
+                    event.preventDefault();
+                }
+
+            });
 
             $scope.beginPirateLife = function(){
                 $state.go('step-1');
@@ -39,5 +51,29 @@ angular.module('app')
                 }
 
             });
+
+            (function(){
+                setInterval(function(){
+                    $.get('/session/global', function(data){
+                        window.PIRATE_SESSION_ID = data;
+
+                    }, function(){
+
+                        if(window.PIRATE_SESSION_ID != data ){
+
+                            pirate.emit('connection_lost');
+
+                        }
+                    });
+                },2000);
+            })();
+
+
+            pirate.on('connection_lost', function(){
+
+                //Check if modal is better when connection is lost.
+                $state.go('start');
+            });
+
 
 }]);

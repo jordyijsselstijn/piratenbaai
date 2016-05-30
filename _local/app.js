@@ -4,6 +4,8 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var exec = require('exec');
 var path = require('path');
+var _session_pirate = null;
+var _GLOBAL_SESSION = 0;
 
 //Run gulp on start.
 exec('gulp', function (err, out, code) {
@@ -46,38 +48,51 @@ app.get('/start/pirate_name', function (req, res) {
 
 });
 
-//handle the connection
-io.on('connection', function (socket) {
-    console.log('user connected');
-});
+app.get('/session/pirate', function(req, res){
+
+    res.send(_session_pirate);
+
+}.bind(this));
+
+app.get('/session/global', function(req, res){
+
+    res.send(_GLOBAL_SESSION.toString());
+
+}.bind(this));
 
 //handle all events from the connection
 io.on('connection', function (socket) {
 
+    socket.on('player_ready', function(name){
+
+        console.log("Cap'n "+name.firstName+" "+name.lastName+" is ready");
+        _session_pirate = name;
+        _GLOBAL_SESSION = Math.ceil((Math.random() * 100));
+        console.log("SESSION ALIVE WITH ID: "+_GLOBAL_SESSION);
+
+    }.bind(this));
     /**
      * Directional events
      */
-
     socket.on('forward', function (event) {
-        //console.log('forward by', event, '%');
+        console.log("forward by  "+event);
     });
 
     socket.on('backward', function (event) {
-        //console.log('backward by', event, '%');
+        console.log('backward by '+event);
     });
 
     socket.on('right', function (event) {
-        //console.log('right by', event, '%');
+        console.log('right by '+event);
     });
 
     socket.on('left', function (event) {
-        //console.log('left by', event, '%');
+        console.log('left by '+event );
     });
 
     /**
      * Admin events!
      */
-
     socket.on('complete_chapter', function(data){
         console.log('Completed chapter, open new chapter.');
         socket.broadcast.emit('complete_chapter', data);
@@ -94,7 +109,7 @@ io.on('connection', function (socket) {
         //do something to the controls.
     });
 
-});
+}.bind(this));
 
 //listen on port 3000
 http.listen(3000, function () {

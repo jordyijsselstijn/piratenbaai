@@ -6,7 +6,6 @@ angular.module('app')
 
                 console.log("Rotation directive loaded");
 
-
                 window.addEventListener("orientationchange", function() {
                     if(window.innerHeight > window.innerWidth){
                         $state.go('rotate');
