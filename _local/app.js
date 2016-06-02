@@ -19,6 +19,7 @@ exec('gulp', function (err, out, code) {
 
 //use the express public folder as static location
 app.use(express.static(__dirname + '../'));
+
 //use the app's public folder as static location.
 app.use('/app',  express.static(path.join(__dirname + '/../', 'app')));
 //use the root domain as static location

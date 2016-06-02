@@ -246,8 +246,7 @@ a, button, .myelements {
   background: #A81432;
   width: 100%;
   height: 100%;
-  position: fixed;
-  background: url(../img/background/chapter_background.jpg) center/cover; }
+  position: fixed; }
 
 .chapter__sidebar {
   width: 382px;

@@ -34,22 +34,22 @@ app.config(['$stateProvider',  function ($stateProvider) {
 
     $stateProvider.state('chapter-2', {
         url: '/chapter-2',
-        templateUrl: '../app/templates/chapter/chapter-2.html'
+        templateUrl: '../app/templates/chapter/chapter-1.html'
     });
 
     $stateProvider.state('chapter-3', {
         url: '/chapter-3',
-        templateUrl: '../app/templates/chapter/chapter-3.html'
+        templateUrl: '../app/templates/chapter/chapter-1.html'
     });
 
     $stateProvider.state('chapter-4', {
         url: '/chapter-4',
-        templateUrl: '../app/templates/chapter/chapter-4.html'
+        templateUrl: '../app/templates/chapter/chapter-1.html'
     });
 
     $stateProvider.state('chapter-5', {
         url: '/chapter-5',
-        templateUrl: '../app/templates/chapter/chapter-5.html'
+        templateUrl: '../app/templates/chapter/chapter-1.html'
     });
 
     $stateProvider.state('admin', {
