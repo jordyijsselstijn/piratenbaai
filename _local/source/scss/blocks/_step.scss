@@ -16,11 +16,19 @@
   position: relative;
 }
 
-.step__icon {
+.step__icon, .step__direction {
   position: absolute;
   top: 130px;
   left: 50%;
   transform: translateX(-50%);
+
+}
+
+.step__icon {
+  max-width: 142px;
+}
+.step__direction {
+  top: 37px;
 }
 
 .step__description {
@@ -28,9 +36,12 @@
   font-size: 25px;
   color: #DA465D;
   position: absolute;
-  top: 373px;
+  top: 331px;
   width: 100%;
   text-align: center;
+  max-width: 300px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .step__button {
@@ -64,4 +75,33 @@
 
 .step__wizard-item--active {
   opacity: 0.92;
+}
+
+//
+
+.final__card {
+  width: 777px;
+}
+
+.final__pirate {
+  max-width: 279px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.final__header {
+  font-family: Athelas;
+  font-size: 53px;
+  color: #DA465D;
+  position: absolute;
+  top: 89px;
+  right: 67px;
+  text-transform: uppercase;
+}
+
+.final__icon {
+  width: 135px;
+  top: 
 }

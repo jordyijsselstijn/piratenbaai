@@ -122,8 +122,8 @@ a, button, .myelements {
   color: #FFFFFF;
   text-transform: uppercase;
   position: fixed;
-  top: 655px;
-  left: 70px;
+  top: 450px;
+  left: 450px;
   width: 175px;
   height: 45px;
   line-height: 45px;
@@ -198,20 +198,29 @@ a, button, .myelements {
   margin: -18px auto 0;
   position: relative; }
 
-.step__icon {
+.step__icon, .step__direction {
   position: absolute;
   top: 130px;
   left: 50%;
   transform: translateX(-50%); }
+
+.step__icon {
+  max-width: 142px; }
+
+.step__direction {
+  top: 37px; }
 
 .step__description {
   font-family: Athelas-Regular;
   font-size: 25px;
   color: #DA465D;
   position: absolute;
-  top: 373px;
+  top: 331px;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  max-width: 300px;
+  left: 50%;
+  transform: translateX(-50%); }
 
 .step__button {
   position: absolute;
@@ -241,6 +250,25 @@ a, button, .myelements {
 
 .step__wizard-item--active {
   opacity: 0.92; }
+
+.final__card {
+  width: 777px; }
+
+.final__pirate {
+  max-width: 279px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10; }
+
+.final__header {
+  font-family: Athelas;
+  font-size: 53px;
+  color: #DA465D;
+  position: absolute;
+  top: 89px;
+  right: 67px;
+  text-transform: uppercase; }
 
 .chapter {
   background: #A81432;
@@ -277,7 +305,7 @@ a, button, .myelements {
 
 .chapter__controls {
   position: absolute;
-  top: 164px;
+  top: 190px;
   width: 194px;
   left: 50%;
   transform: translateX(-50%); }
@@ -286,7 +314,8 @@ a, button, .myelements {
   margin-right: 65px; }
 
 .chapter__controls--play {
-  margin-right: 60px; }
+  margin-right: 60px;
+  transform: translateY(2px); }
 
 .chapter__waves {
   position: absolute;
@@ -312,3 +341,10 @@ a, button, .myelements {
   top: 332px;
   width: 100%;
   text-transform: uppercase; }
+
+.chapter__pirate {
+  max-width: 400px;
+  position: fixed;
+  left: 20px;
+  bottom: -20px;
+  z-index: 10; }

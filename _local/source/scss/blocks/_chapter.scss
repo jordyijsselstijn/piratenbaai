@@ -37,7 +37,7 @@
 
 .chapter__controls {
   position: absolute;
-  top: 164px;
+  top: 190px;
   width: 194px;
   left: 50%;
   transform: translateX(-50%);
@@ -49,6 +49,7 @@
 
 .chapter__controls--play {
   margin-right: 60px;
+  transform: translateY(2px);
 }
 
 .chapter__controls--next {
@@ -83,3 +84,10 @@
   text-transform: uppercase;
 }
 
+.chapter__pirate {
+  max-width: 400px;
+  position: fixed;
+  left: 20px;
+  bottom: -20px;
+  z-index: 10;
+}

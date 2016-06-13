@@ -52,6 +52,13 @@ app.config(['$stateProvider',  function ($stateProvider) {
         templateUrl: '../app/templates/chapter/chapter-1.html'
     });
 
+    $stateProvider.state('final', {
+        url: '/final',
+        templateUrl: '../app/templates/final/final.html'
+    });
+    
+    
+
     $stateProvider.state('admin', {
         url: '/admin',
         templateUrl: '../app/templates/admin/admin-panel.html'
