@@ -91,3 +91,42 @@
   bottom: -20px;
   z-index: 10;
 }
+
+.counter__header {
+  /* Arrr...  Jou avontuu: */
+  font-family: LucidaGrande;
+  font-size: 20px;
+  color: #DA465D;
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  text-align: center;
+}
+
+.counter__subheader {
+  font-family: DroidSerif;
+  font-size: 36px;
+  color: #DA465D;
+  letter-spacing: 2.05px;
+  position: absolute;
+  top: 150px;
+  width: 100%;
+  text-align: center;
+}
+
+.counter__counter {
+  background: #DA465D;
+  box-shadow: 0px 2px 85px 0px rgba(0,0,0,0.16);
+  font-family: DroidSerif;
+  font-size: 112px;
+  color: #F9F0F1;
+  border-radius: 50%;
+  position: absolute;
+  top: 250px;
+  width: 168px;
+  height: 168px;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 168px;
+}

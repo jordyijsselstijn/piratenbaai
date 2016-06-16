@@ -1,6 +1,6 @@
 var app = angular.module('app', ['ui', 'ui.router', 'ngAudio']);
 
-app.config(['$stateProvider',  function ($stateProvider) {
+app.config(['$stateProvider', function ($stateProvider) {
 
     $stateProvider.state('start', {
         url: '/start',
@@ -11,20 +11,25 @@ app.config(['$stateProvider',  function ($stateProvider) {
         url: '/welcome',
         templateUrl: '../app/templates/start/welcome.html'
     });
-    
+
     $stateProvider.state('step-1', {
         url: '/step-1',
         templateUrl: '../app/templates/boarding/step-1.html'
     });
-    
+
     $stateProvider.state('step-2', {
         url: '/step-2',
         templateUrl: '../app/templates/boarding/step-2.html'
     });
-    
+
     $stateProvider.state('step-3', {
         url: '/step-3',
         templateUrl: '../app/templates/boarding/step-3.html'
+    });
+
+    $stateProvider.state('counter', {
+        url: '/counter',
+        templateUrl: '../app/templates/counter/counter.html'
     });
 
     $stateProvider.state('chapter-1', {
@@ -56,8 +61,7 @@ app.config(['$stateProvider',  function ($stateProvider) {
         url: '/final',
         templateUrl: '../app/templates/final/final.html'
     });
-    
-    
+
 
     $stateProvider.state('admin', {
         url: '/admin',
