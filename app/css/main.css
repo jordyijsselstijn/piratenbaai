@@ -293,9 +293,13 @@ a, button, .myelements {
   top: 78px; }
 
 .final__support {
-  bottom: 41px;
+  bottom: 0;
   right: 82px;
   position: absolute; }
+
+.final__card--border {
+  border-bottom: 25px solid white;
+  background: rgba(255, 255, 255, 0.9); }
 
 .chapter {
   background: #A81432;

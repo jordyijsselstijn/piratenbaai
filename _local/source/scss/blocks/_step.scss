@@ -127,7 +127,12 @@
 }
 
 .final__support {
-  bottom: 41px;
+  bottom: 0;
   right: 82px;
   position: absolute;
+}
+
+.final__card--border {
+  border-bottom: 25px solid white;
+  background: rgba(255,255,255,0.90);
 }
