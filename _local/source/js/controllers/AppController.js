@@ -9,7 +9,7 @@ angular.module('app')
 
             $scope.start = function(){
 
-                if($scope.pirate.firstName != null || true){
+                if($scope.pirate.firstName != null){
                     PirateService.getPirateName($scope.pirate.firstName).then(function(data){
                         $scope.pirate.lastName = data.data.lastName;
                     });
@@ -22,6 +22,10 @@ angular.module('app')
             $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams){
 
                 //if pirate is not yet set, make sure routes to the chapter section are blocked.
+                if($scope.pirate.firstName == null && toState.name != 'start'){
+                    console.log("Pirate's first name is not yet set. Navigation blocked!");
+                    event.preventDefault();
+                }
 
             });
 
